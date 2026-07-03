@@ -45,6 +45,12 @@ All assignment deliverables and technical documentations are located within this
 
 ---
 
+## 🌍 Live Deployment
+
+**https://wellnestdaffodil.netlify.app/**
+
+---
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: Next.js, React, Tailwind CSS, Lucide Icons, Sonner (Toasts)

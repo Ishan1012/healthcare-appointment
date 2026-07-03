@@ -9,13 +9,13 @@ const seedAdmin = async () => {
     try {
         const adminCount = await Admin.countDocuments();
         if (adminCount === 0) {
-            const hashedPassword = await bcrypt.hash("admin12345", 10);
+            const hashedPassword = await bcrypt.hash("admin@123", 10);
             const defaultAdmin = new Admin({
                 email: "admin@wellnest.com",
                 password: hashedPassword
             });
             await defaultAdmin.save();
-            console.log("Default admin seeded successfully! (admin@wellnest.com / admin12345)");
+            console.log("Default admin seeded successfully!");
         }
     } catch (err) {
         console.error("Failed to seed default admin:", err);

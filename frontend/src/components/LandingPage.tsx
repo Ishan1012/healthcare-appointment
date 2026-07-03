@@ -34,7 +34,7 @@ const LandingPage = (): JSX.Element => {
 					name: "Clinical Coordinator Admin",
 					status: "System Seeding & Controls",
 					image: "/images/user-default.png",
-					testimonial: "Successfully seeds default administrator credentials (admin@wellnest.com / admin12345) on initial database connection, allowing immediate management of doctor profiles.",
+					testimonial: "Successfully seeds default administrator credentials on initial database connection, allowing immediate management of doctor profiles.",
 					rating: 5,
 					createdAt: "2026-07-03",
 					updatedAt: "2026-07-03"

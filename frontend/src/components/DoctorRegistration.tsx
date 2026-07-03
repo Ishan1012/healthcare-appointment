@@ -125,6 +125,7 @@ const DoctorRegistration = (): JSX.Element => {
             dataForSubmission = {
                 ...formData,
             };
+            delete (dataForSubmission as any).profileUrl;
         }
 
         try {

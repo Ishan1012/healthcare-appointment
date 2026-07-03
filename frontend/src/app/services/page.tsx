@@ -1,6 +1,6 @@
 'use client';
 import React from 'react'
-import ServicesPage from '@/pages/ServicesPage'
+import ServicesPage from '@/page-components/ServicesPage'
 import Footer from '@/components/Footer'
 import dynamic from 'next/dynamic';
 

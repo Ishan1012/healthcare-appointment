@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import AboutPage from '@/pages/AboutPage'
+import AboutPage from '@/page-components/AboutPage'
 import Footer from '@/components/Footer'
 import dynamic from 'next/dynamic';
 

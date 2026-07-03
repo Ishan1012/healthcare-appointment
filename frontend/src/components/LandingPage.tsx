@@ -16,7 +16,7 @@ import {
 import { Testimonial } from '@/types/type';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
-import LoadingSpinner from '@/pages/LoadingPage';
+import LoadingSpinner from '@/page-components/LoadingPage';
 
 const LandingPage = (): JSX.Element => {
 	const [testimonials, setTestimonials] = useState<Testimonial[]>([]);

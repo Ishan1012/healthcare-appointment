@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { AppointmentDetails } from '@/types/type';
 import { toast } from 'sonner';
 import { getAppointmentApi } from '@/apis/apis';
-import LoadingSpinner from '@/pages/LoadingPage';
+import LoadingSpinner from '@/page-components/LoadingPage';
 import { useParams } from 'next/navigation';
 
 const Header = dynamic(() => import("@/components/Header"), { ssr: false });

@@ -336,7 +336,6 @@ const Profile: FC = () => {
 				const data = await getUser();
 
 				setUser(data);
-				setIsLoading(false);
 			} catch (error) {
 				const errorMessage = String(error);
 
@@ -348,6 +347,8 @@ const Profile: FC = () => {
 					console.error(error);
 					toast.error("An error occurred: " + errorMessage);
 				}
+			} finally {
+				setIsLoading(false);
 			}
 		};
 

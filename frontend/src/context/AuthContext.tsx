@@ -102,6 +102,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             if (response) {
                 const { message, userDetails } = response.data;
                 setUserSession(userDetails);
+                localStorage.setItem("userSession", JSON.stringify(userDetails));
                 return true;
             }
         } catch (error) {

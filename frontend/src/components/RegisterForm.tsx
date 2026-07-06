@@ -32,12 +32,14 @@ const RegisterForm = ({ userType }: RegisterFormProps): JSX.Element => {
   });
   const router = useRouter();
   const [errors, setErrors] = useState<FormErrors>({});
+  const [loading, setLoading] = useState(false);
   const [loadingGoogle, setLoadingGoogle] = useState(false);
 
   const { signup, googleLogin } = useAuth();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
     const data: SignUpRequest = { role: userType || "Patient", name: formData.name, email: formData.email, password: formData.password };
     try {
       const response = await signup(data);
@@ -53,6 +55,8 @@ const RegisterForm = ({ userType }: RegisterFormProps): JSX.Element => {
     } catch (error) {
       toast.error("An error occured. Error: " + error);
       router.replace('/register');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -268,9 +272,10 @@ const RegisterForm = ({ userType }: RegisterFormProps): JSX.Element => {
               <div>
                 <button
                   type="submit"
-                  className="w-full cursor-pointer flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-colors duration-300"
+                  disabled={loading}
+                  className="w-full cursor-pointer flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Create Account
+                  {loading ? "Creating Account..." : "Create Account"}
                 </button>
               </div>
 
